@@ -1,4 +1,4 @@
-assignmnet link:https://medium.com/p/749c3daae3e1/edit
+post link:https://medium.com/p/749c3daae3e1/edit  this post just for practice
 
 
 
