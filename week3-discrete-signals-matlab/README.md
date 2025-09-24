@@ -6,13 +6,12 @@
 
 # Unit Step:Turns on a system/input at n=0  
 <img width="511" height="262" alt="image" src="https://github.com/user-attachments/assets/84735eb1-4b2c-4b0d-90da-6cfba4bf7c56" />
-
-# Unit Ramp:Tests system response to linearly increasing inputs.
+# Unit Ramp:Tests system response to linearly increasing inputs
 <img width="513" height="267" alt="image" src="https://github.com/user-attachments/assets/21293d99-599e-4420-b2c6-e4eb7ca06b2d" />
 # Right-Sided Exponential:Fundamental LTI mode; appears in natural/forced responses
 <img width="511" height="263" alt="image" src="https://github.com/user-attachments/assets/53512cc0-02af-4a63-8449-a26c32503ace" />
-# Signum:Simple nonlinearity; useful in examples and symmetry checks.
-
+# Signum:Simple nonlinearity; useful in examples and symmetry checks
+<img width="511" height="263" alt="image" src="https://github.com/user-attachments/assets/cd728786-5bef-41c8-bab1-57e7e3c2b9a4" />
 # Discrete-time sinc (scaled)
 This plot shows a scaled discrete-time sinc sequence，The scaling by 𝐿 spreads the main lobe around n=0 and prevents all integer samples (except n=0) from landing on zeros, so you see a tall central lobe and decaying oscillatory side lobes on both sides.
 <img width="695" height="524" alt="image" src="https://github.com/user-attachments/assets/cd1ca42e-fd76-4834-862a-4a6152fdc8a8" />
