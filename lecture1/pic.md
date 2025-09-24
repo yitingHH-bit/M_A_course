@@ -1,9 +1,4 @@
-Modify the MATLAB script:
-Try different sampling frequencies (below Nyquist, at Nyquist, and above Nyquist).
-Use different quantization levels (8, 16, 64).
-Plot and compare the effect on signal quality.
-Upload results + code to GitHub. Submit the GitHub link here.
-Write a short blog post (Medium or dev.to, etc.) (“From Analog to Digital: Signal Simulation”). Submit the link here.
+assignmnet link:https://medium.com/p/749c3daae3e1/edit
 
 
 
