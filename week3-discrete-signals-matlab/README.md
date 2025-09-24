@@ -9,6 +9,8 @@
 
 <img width="914" height="667" alt="image" src="https://github.com/user-attachments/assets/4303a8da-3519-40b7-9531-8c9a02e6ac5d" />
 
+<img width="695" height="524" alt="image" src="https://github.com/user-attachments/assets/cd1ca42e-fd76-4834-862a-4a6152fdc8a8" />
+
 ## so How to run
 
 1. Open MATLAB.
