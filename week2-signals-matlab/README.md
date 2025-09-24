@@ -9,7 +9,8 @@
 <img width="520" height="238" alt="image" src="https://github.com/user-attachments/assets/40d9ba3f-c956-4d55-9df9-8bbb1dd35d24" />
 
 # Exponential Signal  
-<img width="517" height="237" alt="image" src="https://github.com/user-attachments/assets/c15ba95a-929f-4aab-939b-61a7d8197958" />
+<img width="354" height="240" alt="image" src="https://github.com/user-attachments/assets/9215fc65-ee66-4fec-84b4-ea419242aa6d" />
+
 
 # Signum Signal 
 <img width="1063" height="233" alt="image" src="https://github.com/user-attachments/assets/15449c96-3617-4823-8d2d-cd7cb1339f4c" />
