@@ -90,11 +90,15 @@ grid on; xlabel('n'); ylabel('sgn[n]');
 title('Signum Function sgn[n]');
 xlim([min(n) max(n)]); ylim([-1.2 1.2]);
 
-% sinc
-nexttile;
-stem(n, sinc_d, 'filled');
-grid on; xlabel('n'); ylabel('sinc_d[n]');
-title('Discrete sinc: sin(\pin)/(\pin)');
-xlim([min(n) max(n)]);
 
+n = -30:30;          % 离散时间索引
+L = 4;               % 缩放因子（改这个就能调主瓣宽度，4≈你的图）
+y = sinc(n/L);       % MATLAB 的 sinc(x) = sin(pi*x)/(pi*x)
 
+figure('Color','w');
+stem(n, y, 'o','filled'); 
+grid on;
+title('discrete time sinc function');
+xlabel('discrete time n  ------>');
+ylabel('amplitude  --->');
+ylim([-0.4 1.05]);
