@@ -2,7 +2,7 @@
 # Unit Impulse  
 <img width="525" height="242" alt="image" src="https://github.com/user-attachments/assets/b018aad3-e6cd-442a-8f7d-3682c89730fd" />
 
-# Unit Step  
+# Unit Step  ， actually I am stuggling with this figure 
 <img width="520" height="243" alt="image" src="https://github.com/user-attachments/assets/86d4cd51-9f43-4f86-88e6-9ae1dec82029" />
 
 # Unit Ramp  
