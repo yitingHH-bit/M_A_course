@@ -1,4 +1,4 @@
-# actualy the core idea  from the GPT
+# about description below, actualy the core idea  from the GPT
 # week3-discrete-signals-matlab
 # Unit Impulse:Models a “sample at one time index”; system impulse response
 # Unit Step:Turns on a system/input at n=0  
