@@ -15,4 +15,4 @@ HOW TO SUBMIT: Include screenshots and short explanations for each section in th
 ## Gaussian blur matches the noise distribution; usually better edge retention than mean for similar smoothness.
 
 ## (Optional) Wiener adapts to local variance and often achieves the best PSNR/SSIM among traditional filters on AWGN.  
-![Uploading image.png…]()
+<img width="1316" height="321" alt="image" src="https://github.com/user-attachments/assets/83d227cc-dda8-4d80-9779-398ec27d5f2e" />
