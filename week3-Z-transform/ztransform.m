@@ -181,3 +181,8 @@ grid on; xlabel('n'); ylabel('y[n]');
 title('A5: Filtered Output Signal');
 
 % Interpretation of filter type (low-pass, etc.) goes in the report.
+
+
+
+
+
