@@ -1,4 +1,90 @@
-Here is a complete **README.md** you can copy directly into your GitHub repo
+<img width="1116" height="737" alt="image" src="https://github.com/user-attachments/assets/403935e1-f38b-4d21-a18b-e6a332de71c0" />
+<img width="1140" height="740" alt="image" src="https://github.com/user-attachments/assets/e82193ed-4762-402f-9167-1a4a277b6ef8" />
+<img width="1097" height="702" alt="image" src="https://github.com/user-attachments/assets/ba3e5446-fab0-4e4e-ab36-cc45bdf568aa" />
+
+A1 (i)  X1(z) = 1 + 2 z^{-1} + 5 z^{-2}
+2    5
+- + -- + 1
+z    2
+    z
+
+A1 (i)  X1(z) from symbolic sum:
+ 2
+z  + 2 z + 5
+------------
+      2
+     z
+
+A1 (ii) X2(z) = 3 z^{-1} + 4 z^{-3}
+3    4
+- + --
+z    3
+    z
+
+A1 (ii) X2(z) from symbolic sum:
+   2
+3 z  + 4
+--------
+    3
+   z
+
+A2 (a)  X(z) for a = 0.6:
+   1      1
+------- + -
+5 z       2
+--- - 1
+ 3
+
+ROC: |z| > 0.6
+A2 (b)  X(z) for a = -0.8:
+1      1
+- - -------
+2   5 z
+    --- + 1
+     4
+
+ROC: |z| > 0.8
+A2 (c)  X(z) for left-sided sequence:
+0
+
+ROC: |z| < 0.9
+A3 (a)  Z{2 x1[n] - 3 x2[n]} = 
+     2
+  4 z  - 20 z + 1
+- ---------------
+        2
+    (4 z  - 1) 2
+
+A3 (b)  Z{x1[n-3]} = 
+   1      1
+------- + -
+2 z - 1   2
+-----------
+      3
+     z
+
+A4 (a)  x[n] from X(z) = 1 / (1 - 0.7 z^{-1}):
+/  7 \n
+| -- |
+\ 10 /
+
+A4 (b)  x[n] from X(z) = (1 - 0.5 z^{-1}) / (1 - 0.8 z^{-1}):
+  / 4 \n
+3 | - |
+  \ 5 /    5 kroneckerDelta(n, 0)
+-------- + ----------------------
+    8                 8
+
+A5 (a)  Zeros:
+   1.2000 + 1.2000i
+   1.2000 - 1.2000i
+
+A5 (a)  Poles:
+   0.4000 + 0.6928i
+   0.4000 - 0.6928i
+
+   
+
 **week3-Z-transform**.
 
 If you'd like, I can also generate a nicer **PDF**, **GitHub-formatted table of contents**, or a **blog post**.
