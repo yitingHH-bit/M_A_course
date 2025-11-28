@@ -1,5 +1,6 @@
 # about description below, actualy the core idea  from the GPT
 # week3-discrete-signals-matlab
+<img width="1201" height="746" alt="image" src="https://github.com/user-attachments/assets/10b64c21-3ea9-49f9-bc35-bb20dde90b5d" />
 
 # Unit Impulse:Models a “sample at one time index”; system impulse response
 <img width="515" height="250" alt="image" src="https://github.com/user-attachments/assets/69b03664-6bd4-484f-a87f-08f48299c6db" />
