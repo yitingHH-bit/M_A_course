@@ -1,3 +1,9 @@
+# 1st
+<img width="1098" height="740" alt="image" src="https://github.com/user-attachments/assets/2cb7ea0b-445a-4c43-b55b-5fb2ebec9e4c" />
+<img width="899" height="697" alt="image" src="https://github.com/user-attachments/assets/0c706f74-4a6a-455b-a74c-51eb24fa1b13" />
+
+
+
 # about description below, actualy the core idea  from the GPT
 # week3-discrete-signals-matlab
 <img width="1201" height="746" alt="image" src="https://github.com/user-attachments/assets/10b64c21-3ea9-49f9-bc35-bb20dde90b5d" />
