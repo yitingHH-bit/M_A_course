@@ -1,104 +1,74 @@
-% discrete_signals.m
-% Week 3 - Discrete-Time Signals (stem plots)
-% Author: <your name>
-% Description: Generate and plot common discrete-time signals over n = -10:10.
+%% week3-discrete-signals-matlab
+% Basic discrete-time signals demo
+% Run with:  >> discrete_signals
 
 clc; clear; close all;
 
-% ----------------------------
-% 0) Common setup
-% ----------------------------
-n = -10:10;                 % discrete-time index vector
-N = numel(n);
+% Common index axis for all signals
+n = -20:20;                      % sample indices
 
-% Helper inline functions for readability
-u  = @(n) double(n >= 0);                   % unit step u[n]
-sgn = @(n) double(n > 0) - double(n < 0);   % signum: -1 (n<0), 0 (n=0), 1 (n>0)
+%% 1) Unit Impulse: models a "sample at one time index"
+delta = double(n == 0);          % δ[n] = 1 at n=0, 0 elsewhere
 
-% ----------------------------
-% 1) Unit Impulse δ[n]
-% ----------------------------
-delta = double(n == 0);     % 1 at n=0, else 0
+%% 2) Unit Step: turns on a system/input at n = 0
+u = double(n >= 0);              % u[n] = 1 for n>=0, 0 otherwise
 
-% ----------------------------
-% 2) Unit Step u[n]
-% ----------------------------
-step = u(n);                % 1 for n>=0, else 0
+%% 3) Unit Ramp: tests system response to linearly increasing inputs
+r = n .* u;                      % r[n] = n for n>=0, 0 for n<0
 
-% ----------------------------
-% 3) Unit Ramp r[n] = n·u[n]
-% ----------------------------
-ramp = n .* u(n);           % linear growth for n>=0, zero for n<0
+%% 4) Right-sided Exponential: fundamental LTI mode
+a = 0.8;                         % decay factor (0<|a|<1 for decaying)
+x_exp = (a.^n) .* u;             % x[n] = a^n u[n], right-sided sequence
 
-% ----------------------------
-% 4) Exponential Signal x[n] = a^n u[n], choose a in (0,1) for decay
-% ----------------------------
-a = 0.8;                    % decay factor (try 1.2 to see growth for n>=0)
-exp_sig = (a.^n) .* u(n);   % causal right-sided exponential
+%% 5) Signum: simple nonlinearity; useful for symmetry checks
+sgn = zeros(size(n));            % initialize with zeros
+sgn(n > 0) = 1;                  % +1 for n>0
+sgn(n < 0) = -1;                 % -1 for n<0
+% sgn(0) stays 0
 
-% ----------------------------
-% 5) Signum Function sgn[n]
-% ----------------------------
-signum = sgn(n);            % -1 for n<0, 0 at n=0, +1 for n>0
+%% 6) Discrete-time sinc (scaled)
+% x[n] = sin(pi*n/L) / (pi*n/L)
+% Scaling by L spreads the main lobe, so not every integer n is a zero.
+L = 4;                            % time-scaling factor
+x_sinc = ones(size(n));           % value at n=0 is 1 (limit)
+idx = (n ~= 0);                   % avoid division by zero
+x_sinc(idx) = sin(pi*n(idx)/L) ./ (pi*n(idx)/L);
 
-% ----------------------------
-% 6) Sinc Function sinc_d[n] = sin(pi n)/(pi n), with sinc_d[0] = 1
-% ----------------------------
-sinc_d = zeros(size(n));
-idx0   = (n == 0);
-sinc_d(idx0)    = 1;                          % define value at n=0
-sinc_d(~idx0)   = sin(pi*n(~idx0)) ./ (pi*n(~idx0));
+%% ---- Plot all signals ----------------------------------------------
+figure('Name','Basic Discrete-Time Signals','NumberTitle','off');
 
-% ----------------------------
-% Plot all (discrete → use stem)
-% ----------------------------
-figure('Name','Discrete-Time Signals','Color','w');
-tiledlayout(3,2, 'TileSpacing','compact','Padding','compact');
-
-% δ[n]
-nexttile;
+subplot(3,2,1);
 stem(n, delta, 'filled');
-grid on; xlabel('n'); ylabel('\delta[n]');
 title('Unit Impulse \delta[n]');
-xlim([min(n) max(n)]);
+xlabel('n'); ylabel('\delta[n]');
+grid on; axis tight;
 
-% u[n]
-nexttile;
-stem(n, step, 'filled');
-grid on; xlabel('n'); ylabel('u[n]');
+subplot(3,2,2);
+stem(n, u, 'filled');
 title('Unit Step u[n]');
-xlim([min(n) max(n)]); ylim([-0.2 1.2]);
+xlabel('n'); ylabel('u[n]');
+grid on; axis tight;
 
-% r[n] = n u[n]
-nexttile;
-stem(n, ramp, 'filled');
-grid on; xlabel('n'); ylabel('r[n]');
-title('Unit Ramp r[n] = n u[n]');
-xlim([min(n) max(n)]);
+subplot(3,2,3);
+stem(n, r, 'filled');
+title('Unit Ramp r[n]');
+xlabel('n'); ylabel('r[n]');
+grid on; axis tight;
 
-% a^n u[n]
-nexttile;
-stem(n, exp_sig, 'filled');
-grid on; xlabel('n'); ylabel(sprintf('%0.1f^n u[n]', a));
-title(sprintf('Exponential a^n u[n] (a = %.2f)', a));
-xlim([min(n) max(n)]);
+subplot(3,2,4);
+stem(n, x_exp, 'filled');
+title(sprintf('Right-Sided Exponential a^n u[n], a = %.1f', a));
+xlabel('n'); ylabel('x[n]');
+grid on; axis tight;
 
-% sgn[n]
-nexttile;
-stem(n, signum, 'filled');
-grid on; xlabel('n'); ylabel('sgn[n]');
-title('Signum Function sgn[n]');
-xlim([min(n) max(n)]); ylim([-1.2 1.2]);
+subplot(3,2,5);
+stem(n, sgn, 'filled');
+title('Signum Signal sgn[n]');
+xlabel('n'); ylabel('sgn[n]');
+grid on; axis([-20 20 -1.2 1.2]);
 
-
-n = -30:30;          % 离散时间索引
-L = 4;               % 缩放因子（改这个就能调主瓣宽度，4≈你的图）
-y = sinc(n/L);       % MATLAB 的 sinc(x) = sin(pi*x)/(pi*x)
-
-figure('Color','w');
-stem(n, y, 'o','filled'); 
-grid on;
-title('discrete time sinc function');
-xlabel('discrete time n  ------>');
-ylabel('amplitude  --->');
-ylim([-0.4 1.05]);
+subplot(3,2,6);
+stem(n, x_sinc, 'filled');
+title(sprintf('Scaled Discrete-Time sinc, L = %d', L));
+xlabel('n'); ylabel('sinc_L[n]');
+grid on; axis tight;
